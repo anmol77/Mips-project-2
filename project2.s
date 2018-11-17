@@ -199,3 +199,7 @@ j exit
 print_decimal_value:
 li $v0, 1                                   # syscall code to print integer
 addi $a0, $t7, 0                            # print the total sum
+syscall
+
+exit:
+li $v0, 10                                  # end the program

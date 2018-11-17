@@ -100,3 +100,7 @@ j loop
 check_previous_char:
 beq $t4, 0, there_is_space_in_between       # if there is space between valid characters
 j loop
+
+invalid_value:
+li $v0, 4                                   #  system call code for printing string
+la $a0, input_value_invalid

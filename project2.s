@@ -47,3 +47,8 @@ bne $t2, $zero, char_is_digit
 slti $t2, $a0, 65                           #  if $a0 is less than 65 at this point, $t2 = 1. This checks if the values lie between the invalid characters between upper and lower case values
 bne $t2, $zero, char_invalid
 slti $t2, $a0, 82                           #  if $a0 is less than 82, the character chosen is in uppercase which is handled in label upper case
+bne $t2, $zero, char_is_upper
+slti $t2, $a0, 97                           #  if $a0 is less than 97, $t2 = 1, which helps to check the validity of character as 97 is the lower limit for valid lower case letters
+bne $t2, $zero, char_invalid
+slti $t2, $a0, 114                          # sets $t2 = 1 if $a0 is less than 114 which is the range for lower case value for the valid character
+bne $t2, $zero, char_is_lower

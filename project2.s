@@ -41,3 +41,6 @@ beq $t2, $zero, char_invalid
 
 beq $a0, 32, space_found                    #  skip the space
 slti $t2, $a0, 48                           # $t2 = 1 if the character  $a0 is less than 48
+bne $t2, $zero, char_invalid
+slti $t2, $a0, 58                           # $t2 = 1 if the character $a0 is less than 58
+bne $t2, $zero, char_is_digit

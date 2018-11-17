@@ -26,3 +26,6 @@ j exit                                      #  exit if it is an empty string
 
 li $s2, -1                                  # checks the validity of the program
 li $s3, 0                                   # keeps track of length of valid characters
+li $t1, 0                                   #  initializing $t1 to zero to later find the length of chars in string
+li $t3, 0                                   #  to count spaces.
+li $t4, -20                                 #  initializing $t4 to -20, when a character is found, $t4 is set to 1

@@ -75,3 +75,8 @@ addi $t1, $t1, 1                            #  increase the character count
 bne $t1, 1, check_previous_char             #  if more than one valid characters are present, check if previous character is correct
 li $t4, 1                                   # if first valid char is seen
 j loop
+
+char_is_digit:
+addi $s3, $s3, 1                            #  increase the valid character count
+addi $t1, $t1, 1                            #  increase character count
+bne $t1, 1, check_previous_char             #  if valid char occered for multiple occurences check all prev char to be valid

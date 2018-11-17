@@ -122,3 +122,7 @@ li $t7, 0                                   #  register to store the conversion 
 move $t0, $t8                               #  move the string again to $t0 for fresh calculation
 
 beq $t1, 0, input_is_empty                  #  string only has spaces
+slti $t2, $t1, 5                            #  checking the validity of the string length which can't be more than 4
+beq $t2, $zero, too_long                    #  too long to handle
+
+beq $s2, -1, invalid_value                  #  if spaces between valid chars of required length

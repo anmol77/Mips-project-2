@@ -96,3 +96,7 @@ addi $t1, $t1, 1                            #  increase character counter
 bne $t1, 1, check_previous_char
 li $t4, 1
 j loop
+
+check_previous_char:
+beq $t4, 0, there_is_space_in_between       # if there is space between valid characters
+j loop

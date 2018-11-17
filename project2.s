@@ -111,3 +111,5 @@ there_is_space_in_between:
 li $s2, -1
 add $t1, $t1, $t3                           # length here equals the total number of length plus the spaces
 li $t3, 0                                   # setting the space counter back to zero
+li $t4, 1                                   # assuming the space between valid character is found
+j loop

@@ -153,3 +153,8 @@ slti $t2, $a0, 114                          #if $a0 is less than 114, $t2 is set
 bne $t2, $zero, conversion_of_lower_case
 
 j loop_for_conversion
+
+conversion_of_digit:
+addi $a0, $a0, -48                          #  conversion of ascii value to base-27
+mult $a0, $a2                               # a2 = 27^n
+mflo $t9

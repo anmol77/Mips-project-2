@@ -12,3 +12,8 @@ li $a1, 11000                               #  allocating byte space for input s
 syscall
 move $t8, $a0                               #  keeping the copy of string in other register
 move $t0, $a0                               #  move string to t0
+
+if_input_empty:
+lb $a0, 0($t0)
+beq $a0, 10, input_is_empty
+j loop                                      #  if it is not empty, go through the loop

@@ -126,3 +126,8 @@ slti $t2, $t1, 5                            #  checking the validity of the stri
 beq $t2, $zero, too_long                    #  too long to handle
 
 beq $s2, -1, invalid_value                  #  if spaces between valid chars of required length
+
+slti $t2, $s3, 4                            #  check if padding of the input is required. for instance, if user enters "ab" it needs to make sure to make it "00ab" for calculation"
+bne $t2, $zero, adding_zero_in_front
+
+loop_for_conversion:

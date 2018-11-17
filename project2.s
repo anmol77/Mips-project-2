@@ -195,3 +195,7 @@ li $v0, 4                                   #  system call code for printing str
 la $a0, input_too_long                      # load the message of stored in variable input_too_long
 syscall
 j exit
+
+print_decimal_value:
+li $v0, 1                                   # syscall code to print integer
+addi $a0, $t7, 0                            # print the total sum

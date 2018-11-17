@@ -59,3 +59,7 @@ beq $t1, 0, loop                            #  skips the spaces until it finds f
 beq $t4, 1, space_after_valid_char          #  if a valid char is previously seen
 beq $t4, 0, increase_space_count
 j loop
+
+increase_space_count:
+addi $t3, $t3, 1                             # increase the space count by one after the non-space character is seen
+j loop

@@ -176,3 +176,8 @@ conversion_of_lower_case:
 addi $a0, $a0, -87
 mult $a0, $a2                               #a2 = 27^n
 mflo $t9
+add $t7, $t7, $t9                           #  adding the sum for each bit multiplication and storing it to $t7
+div $a2, $a1
+mflo $a2                                    #  reducing n by 1 to make 27^n to 27^(n-1)
+j loop_for_conversion
+

@@ -29,3 +29,7 @@ li $s3, 0                                   # keeps track of length of valid cha
 li $t1, 0                                   #  initializing $t1 to zero to later find the length of chars in string
 li $t3, 0                                   #  to count spaces.
 li $t4, -20                                 #  initializing $t4 to -20, when a character is found, $t4 is set to 1
+
+loop:
+lb $a0, 0($t0)
+beq $a0, 10, calculate_value                # last char of the string is line feed. If keyword 'enter' is pressed, it starts conversion.

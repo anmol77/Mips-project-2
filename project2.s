@@ -89,3 +89,7 @@ addi $t1, $t1, 1                            #  increase character counter
 bne $t1, 1, check_previous_char
 li $t4, 1
 j loop
+
+char_is_upper:
+addi $s3, $s3, 1                            #  increase valid character counter
+addi $t1, $t1, 1                            #  increase character counter

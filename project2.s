@@ -190,15 +190,15 @@ div $a2, $a1
 mflo $a2
 j zero_adding_loop
 
-too_long:
-li $v0, 4                                   #  system call code for printing string
-la $a0, input_too_long                      # load the message of stored in variable input_too_long
-syscall
-j exit
-
 print_decimal_value:
 li $v0, 1                                   # syscall code to print integer
 addi $a0, $t7, 0                            # print the total sum
+syscall
+#j exit
+
+too_long:
+li $v0, 4                                   #  system call code for printing string
+la $a0, input_too_long                      # load the message of stored in variable input_too_long
 syscall
 
 exit:

@@ -52,3 +52,8 @@ slti $t2, $a0, 97                           #  if $a0 is less than 97, $t2 = 1, 
 bne $t2, $zero, char_invalid
 slti $t2, $a0, 114                          # sets $t2 = 1 if $a0 is less than 114 which is the range for lower case value for the valid character
 bne $t2, $zero, char_is_lower
+j loop
+
+space_found:
+beq $t1, 0, loop                            #  skips the spaces until it finds first non-space character
+beq $t4, 1, space_after_valid_char          #  if a valid char is previously seen

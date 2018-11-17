@@ -143,3 +143,8 @@ slti $t2, $a0, 48                           # setting the value of $t2 to 1 if t
 bne $t2, $zero, char_invalid
 slti $t2, $a0, 58                           #  setting the value of $t2 to 1 if the value is less than 58 i.e 48 to 57
 bne $t2, $zero, conversion_of_digit
+slti $t2, $a0, 65                           #  if  $a0 is less than 65, $t2 is set to 1 which includes the invalid range of characters of ASCII value 58 to 67
+bne $t2, $zero, char_invalid
+slti $t2, $a0, 82                           #  if $a0 is less than 82, $t2 is set to 1 which includes the valid range of 65 to 81
+bne $t2, $zero, conversion_of_upper_case
+slti $t2, $a0, 97                           #  if $a0 is less than 97, $t2 is set to 1 which includes the invalid range of 82 to 96

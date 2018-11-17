@@ -64,7 +64,6 @@ beq $t4, 1, space_after_valid_char          #  if a valid char is previously see
 beq $t4, 0, increase_space_count
 j loop
 
-
 space_after_valid_char:
 li $t4, 0
 addi $t3, $t3, 1                            # increase the space counter

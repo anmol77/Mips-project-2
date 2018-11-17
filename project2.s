@@ -104,3 +104,5 @@ j loop
 invalid_value:
 li $v0, 4                                   #  system call code for printing string
 la $a0, input_value_invalid
+syscall
+j exit

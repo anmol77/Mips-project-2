@@ -17,3 +17,8 @@ if_input_empty:
 lb $a0, 0($t0)
 beq $a0, 10, input_is_empty
 j loop                                      #  if it is not empty, go through the loop
+
+input_is_empty:
+li $v0, 4                                   #  system call code to print string
+la $a0, input_value_empty                   # load address of string to be printed into $a0
+syscall

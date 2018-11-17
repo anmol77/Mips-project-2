@@ -135,3 +135,7 @@ lb $a0, 0($t0)
 beq $a0, 10, print_decimal_value            # last char is line feed ($a0 = 10) so exit the loop and start conversion
 
 addi $t0, $t0, 1                            #  shifing the pointer right by one byte
+
+slti $t2, $a0, 114                          # checking the validity of character for range 0 to 113 else elminating the invalid possibilities with values greater than 113
+beq $t2, $zero, char_invalid
+beq $a0, 32, loop_for_conversion            # ignoring the space character and going back to the loop

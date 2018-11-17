@@ -181,3 +181,7 @@ div $a2, $a1
 mflo $a2                                    #  reducing n by 1 to make 27^n to 27^(n-1)
 j loop_for_conversion
 
+adding_zero_in_front:
+sub $t5, $a3, $t1                          # difference between the length of string and the valid length required
+zero_adding_loop:
+beq $t5, 0, loop_for_conversion

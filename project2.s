@@ -54,15 +54,16 @@ slti $t2, $a0, 114                          # sets $t2 = 1 if $a0 is less than 1
 bne $t2, $zero, char_is_lower
 j loop
 
+increase_space_count:
+addi $t3, $t3, 1                             # increase the space count by one after the non-space character is seen
+j loop
+
 space_found:
 beq $t1, 0, loop                            #  skips the spaces until it finds first non-space character
 beq $t4, 1, space_after_valid_char          #  if a valid char is previously seen
 beq $t4, 0, increase_space_count
 j loop
 
-increase_space_count:
-addi $t3, $t3, 1                             # increase the space count by one after the non-space character is seen
-j loop
 
 space_after_valid_char:
 li $t4, 0

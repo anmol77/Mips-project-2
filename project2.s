@@ -37,3 +37,7 @@ beq $a0, 10, calculate_value                # last char of the string is line fe
 addi $t0, $t0, 1                            #  shifing the pointer by one byte
 
 slti $t2, $a0, 114                          # $t2=1 if $a0 < 114 which is the ascii value of upper limit of valid character q
+beq $t2, $zero, char_invalid
+
+beq $a0, 32, space_found                    #  skip the space
+slti $t2, $a0, 48                           # $t2 = 1 if the character  $a0 is less than 48

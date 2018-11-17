@@ -22,3 +22,7 @@ input_is_empty:
 li $v0, 4                                   #  system call code to print string
 la $a0, input_value_empty                   # load address of string to be printed into $a0
 syscall
+j exit                                      #  exit if it is an empty string
+
+li $s2, -1                                  # checks the validity of the program
+li $s3, 0                                   # keeps track of length of valid characters

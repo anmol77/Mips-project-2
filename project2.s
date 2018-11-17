@@ -82,3 +82,7 @@ addi $t1, $t1, 1                            #  increase character count
 bne $t1, 1, check_previous_char             #  if valid char occered for multiple occurences check all prev char to be valid
 li $t4, 1                                   # only set if first valid char is seen
 j loop
+
+char_is_lower:
+addi $s3, $s3, 1                            #  increase valid character counter
+addi $t1, $t1, 1                            #  increase character counter

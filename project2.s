@@ -72,3 +72,6 @@ j loop
 char_invalid:
 li $s2, -1
 addi $t1, $t1, 1                            #  increase the character count
+bne $t1, 1, check_previous_char             #  if more than one valid characters are present, check if previous character is correct
+li $t4, 1                                   # if first valid char is seen
+j loop

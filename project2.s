@@ -76,6 +76,13 @@ bne $t1, 1, check_previous_char             #  if more than one valid characters
 li $t4, 1                                   # if first valid char is seen
 j loop
 
+char_is_lower:
+addi $s3, $s3, 1                            #  increase valid character counter
+addi $t1, $t1, 1                            #  increase character counter
+#bne $t1, 1, check_previous_char
+#li $t4, 1
+#j loop
+
 char_is_digit:
 addi $s3, $s3, 1                            #  increase the valid character count
 addi $t1, $t1, 1                            #  increase character count
@@ -83,12 +90,6 @@ bne $t1, 1, check_previous_char             #  if valid char occered for multipl
 li $t4, 1                                   # only set if first valid char is seen
 j loop
 
-char_is_lower:
-addi $s3, $s3, 1                            #  increase valid character counter
-addi $t1, $t1, 1                            #  increase character counter
-bne $t1, 1, check_previous_char
-li $t4, 1
-j loop
 
 char_is_upper:
 addi $s3, $s3, 1                            #  increase valid character counter

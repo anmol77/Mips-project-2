@@ -63,3 +63,8 @@ j loop
 increase_space_count:
 addi $t3, $t3, 1                             # increase the space count by one after the non-space character is seen
 j loop
+
+space_after_valid_char:
+li $t4, 0
+addi $t3, $t3, 1                            # increase the space counter
+j loop

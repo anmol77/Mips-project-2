@@ -33,3 +33,7 @@ li $t4, -20                                 #  initializing $t4 to -20, when a c
 loop:
 lb $a0, 0($t0)
 beq $a0, 10, calculate_value                # last char of the string is line feed. If keyword 'enter' is pressed, it starts conversion.
+
+addi $t0, $t0, 1                            #  shifing the pointer by one byte
+
+slti $t2, $a0, 114                          # $t2=1 if $a0 < 114 which is the ascii value of upper limit of valid character q

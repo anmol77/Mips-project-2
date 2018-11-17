@@ -106,3 +106,8 @@ li $v0, 4                                   #  system call code for printing str
 la $a0, input_value_invalid
 syscall
 j exit
+
+there_is_space_in_between:
+li $s2, -1
+add $t1, $t1, $t3                           # length here equals the total number of length plus the spaces
+li $t3, 0                                   # setting the space counter back to zero

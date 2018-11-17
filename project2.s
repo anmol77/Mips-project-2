@@ -44,3 +44,6 @@ slti $t2, $a0, 48                           # $t2 = 1 if the character  $a0 is l
 bne $t2, $zero, char_invalid
 slti $t2, $a0, 58                           # $t2 = 1 if the character $a0 is less than 58
 bne $t2, $zero, char_is_digit
+slti $t2, $a0, 65                           #  if $a0 is less than 65 at this point, $t2 = 1. This checks if the values lie between the invalid characters between upper and lower case values
+bne $t2, $zero, char_invalid
+slti $t2, $a0, 82                           #  if $a0 is less than 82, the character chosen is in uppercase which is handled in label upper case

@@ -194,3 +194,4 @@ too_long:
 li $v0, 4                                   #  system call code for printing string
 la $a0, input_too_long                      # load the message of stored in variable input_too_long
 syscall
+j exit

@@ -113,3 +113,8 @@ add $t1, $t1, $t3                           # length here equals the total numbe
 li $t3, 0                                   # setting the space counter back to zero
 li $t4, 1                                   # assuming the space between valid character is found
 j loop
+
+calculate_value:
+li $a1, 27                                  #  loading the base
+li $a2, 19683                               #  highest possible value for the most significant bit for base-27
+li $a3, 4                                   #  maximum possible length of valid string

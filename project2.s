@@ -118,3 +118,7 @@ calculate_value:
 li $a1, 27                                  #  loading the base
 li $a2, 19683                               #  highest possible value for the most significant bit for base-27
 li $a3, 4                                   #  maximum possible length of valid string
+li $t7, 0                                   #  register to store the conversion sum
+move $t0, $t8                               #  move the string again to $t0 for fresh calculation
+
+beq $t1, 0, input_is_empty                  #  string only has spaces

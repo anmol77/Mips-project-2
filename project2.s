@@ -139,3 +139,7 @@ addi $t0, $t0, 1                            #  shifing the pointer right by one 
 slti $t2, $a0, 114                          # checking the validity of character for range 0 to 113 else elminating the invalid possibilities with values greater than 113
 beq $t2, $zero, char_invalid
 beq $a0, 32, loop_for_conversion            # ignoring the space character and going back to the loop
+slti $t2, $a0, 48                           # setting the value of $t2 to 1 if the character is less than 48 which is invalid character limit
+bne $t2, $zero, char_invalid
+slti $t2, $a0, 58                           #  setting the value of $t2 to 1 if the value is less than 58 i.e 48 to 57
+bne $t2, $zero, conversion_of_digit

@@ -57,3 +57,5 @@ j loop
 space_found:
 beq $t1, 0, loop                            #  skips the spaces until it finds first non-space character
 beq $t4, 1, space_after_valid_char          #  if a valid char is previously seen
+beq $t4, 0, increase_space_count
+j loop

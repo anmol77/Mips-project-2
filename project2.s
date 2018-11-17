@@ -194,7 +194,7 @@ print_decimal_value:
 li $v0, 1                                   # syscall code to print integer
 addi $a0, $t7, 0                            # print the total sum
 syscall
-#j exit
+j exit
 
 too_long:
 li $v0, 4                                   #  system call code for printing string

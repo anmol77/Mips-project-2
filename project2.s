@@ -68,3 +68,7 @@ space_after_valid_char:
 li $t4, 0
 addi $t3, $t3, 1                            # increase the space counter
 j loop
+
+char_invalid:
+li $s2, -1
+addi $t1, $t1, 1                            #  increase the character count

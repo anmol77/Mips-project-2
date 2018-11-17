@@ -203,3 +203,4 @@ syscall
 
 exit:
 li $v0, 10                                  # end the program
+syscall

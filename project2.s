@@ -189,3 +189,8 @@ addi $t5, $t5, -1
 div $a2, $a1
 mflo $a2
 j zero_adding_loop
+
+too_long:
+li $v0, 4                                   #  system call code for printing string
+la $a0, input_too_long                      # load the message of stored in variable input_too_long
+syscall

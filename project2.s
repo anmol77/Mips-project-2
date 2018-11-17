@@ -131,3 +131,7 @@ slti $t2, $s3, 4                            #  check if padding of the input is 
 bne $t2, $zero, adding_zero_in_front
 
 loop_for_conversion:
+lb $a0, 0($t0)
+beq $a0, 10, print_decimal_value            # last char is line feed ($a0 = 10) so exit the loop and start conversion
+
+addi $t0, $t0, 1                            #  shifing the pointer right by one byte

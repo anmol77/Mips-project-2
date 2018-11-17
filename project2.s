@@ -148,3 +148,8 @@ bne $t2, $zero, char_invalid
 slti $t2, $a0, 82                           #  if $a0 is less than 82, $t2 is set to 1 which includes the valid range of 65 to 81
 bne $t2, $zero, conversion_of_upper_case
 slti $t2, $a0, 97                           #  if $a0 is less than 97, $t2 is set to 1 which includes the invalid range of 82 to 96
+bne $t2, $zero, char_invalid
+slti $t2, $a0, 114                          #if $a0 is less than 114, $t2 is set to 1 which includes the valid range of 97 to 113
+bne $t2, $zero, conversion_of_lower_case
+
+j loop_for_conversion
